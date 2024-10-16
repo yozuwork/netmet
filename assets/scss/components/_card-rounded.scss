@@ -1,0 +1,39 @@
+//最外層 定義整個元件
+.card-rounded{
+     //同層級的元素可定義變數
+     $card-border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+     border-radius: $card-border-radius;
+     box-shadow: $box-shadow-lg;
+     // 保險派位置
+     .card-rounded-img-wrapper{
+        position: relative;
+     }
+
+     .card-rounded-badge{
+
+        position: absolute;
+        top:1rem;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 30px;
+        
+    }
+    
+    .card-rounded-img{
+        width: 100%;
+        border-top-left-radius: $card-border-radius;
+        border-top-right-radius: $card-border-radius;
+      
+    }
+    
+    .card-rounded-body{
+        padding: 1rem;
+    }
+
+
+
+
+}
+

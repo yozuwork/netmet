@@ -1,0 +1,18 @@
+
+.avatar-wrapper{
+    display: flex;
+    align-items: center;
+    .avatar-img{
+        border-radius: 44px;
+        object-fit: cover;
+        margin-left: 10px;
+    }
+    .avatar-md{
+        height: 44px;
+        width: 44px;
+    }
+}
+
+.avatar-text{
+    margin-left: 10px;
+}
