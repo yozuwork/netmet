@@ -30,7 +30,7 @@ function moveOutputPlugin() {
 // 導出 Vite 配置
 export default defineConfig({
   // 設置基礎路徑，通常用於部署到子目錄
-  base: '/web-layout-training-vite/',
+  base: '/',
 
   // 配置插件
   plugins: [

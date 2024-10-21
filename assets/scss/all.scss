@@ -1,59 +1,58 @@
 
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
+
 @import '../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css';
 @import '../../node_modules/bootstrap/scss/functions';
 @import 'helpers/color';
 @import 'helpers/variables';
 @import 'helpers/variables-dark';
+@import 'helpers/base';
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-// 6. Add additional custom code here
 
-// 下底線 預設不會直接被編譯 就是說不會產生獨立檔案
-@import 'components/card-rounded.scss';
-@import 'components/avatar-wrapper.scss';
+@import 'components/header';
+@import 'components/button';
 
-$color-blue : #005FF5;
+
 $border-radius : 15px;
-.navbar{
-    .navbar-wrap-left{
-        border-radius: $border-radius;
-    }
-    .navbar-button{
-        width: 70px;
-        height: 70px;
-        border-radius: $border-radius;
-        background-color: $color-blue;
-        i{
-            color:#fff;
-            font-size: 3rem;
-        }
-        border: none;
-       
-    }
-    .navbar-contact-btn{
-        width: 120px;
-        padding: 10px 0;
-    }
-    
-    
-    .logo{
-        width: 180px;
-    
-    }
-
-
-
+.logo{
+    width: 150px;
 }
 
-
-.header{
-    .header-container{
-        border-radius: $border-radius;
-    }
-    .title-img{
-        width: 100%;
-        max-width: 681px;
-    }
-    
+.navbar-gradient-bottom {
+    position: relative;
 }
+.navbar-gradient-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $gradient-primary;
+}
+.navbar-nav .nav-item {
+    margin-right: 1.5rem;
+  }
+  .navbar-nav .nav-item:last-child {
+    margin-right: 0;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;  /* 垂直居中對齊 */
+  }
+  .navbar-nav .nav-link svg {
+    width: 24px;
+    height: 24px; /* 將高度調整為與寬度相同 */
+  }
+  /* 為文字添加樣式，確保一致性 */
+  .navbar-nav .nav-link span {
+    vertical-align: middle;
+    line-height: 1;  /* 防止文字行高影響對齊 */
+  }
+
+
+
+

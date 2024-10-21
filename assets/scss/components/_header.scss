@@ -1,0 +1,68 @@
+.header {
+    position: relative;
+    height: 900px;
+    overflow: hidden;
+
+    // 通用背景圖片樣式
+    %bg-image {
+        position: absolute;
+        z-index: 1;
+    }
+    .mouse{
+        @extend %bg-image;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    // 頂部背景
+    &-bg-top {
+        @extend %bg-image;
+        top: 0;
+        left: 0;
+        max-width: 666px;
+    }
+
+    // 底部背景
+    &-bg-bottom {
+        @extend %bg-image;
+        bottom: 0;
+        left: 0;
+        max-width: 498px;
+    }
+
+    // 幾何背景
+    &-geometry {
+        @extend %bg-image;
+        top: 4%;
+        right:100px;
+
+        z-index: 0;
+        max-width: 929px;
+    }
+
+    // 容器
+    .container {
+        height: 100%; /* 設置容器高度為視窗高度 */
+        display: flex;
+        align-items: center; /* 垂直置中 */
+    }
+
+    // 中心物件
+    .computer{
+        width: 666px;
+        z-index: 1;
+        position: relative;
+   
+        
+    }
+    .title{
+        position: relative;
+        z-index: 1;
+    }
+    .title-text{
+        max-width: 229px;
+    }
+    .title-netmet{
+        max-width: 461px;
+    }
+}
