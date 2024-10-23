@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
   </head>
   <body>
       <nav class="navbar navbar-expand-lg navbar-gradient-bottom">
@@ -101,73 +102,137 @@
 
       <section class="server" style="background-image: url('../assets/images/server-bg.png');">
         <img class="position-absolute server-left-top" src="../assets/images/server-left-top.svg" alt="">
-        <div class="container">
-          <div class="part-title" >
+        <div class="container px-5">
+          <div class="part-title px-5 pb-3" >
             <h1 class="text-light  position-relative" >服務項目  
             <img src="../assets/images/about-scratch.png" alt=""></h1>
             <img  src="../assets/images/Services.svg" alt="">
           </div>
-          
+
+      
           <!-- 第一排 -->
-          <div class="d-flex justify-content-start gap-4 my-4">
-            <div class="card server-card">
-              <div class="card-body server-card-body p-4 text-center d-flex justify-content-center flex-column">
-                <div class="server-card-icon mb-3  ">
-                  <img src="../assets/images/s1.svg" alt="智能化佈局" class="w-50">
+          <div class="row    my-4 px-5">
+            
+           <div class="col-3">
+              <div class="card server-card">
+                <div class="card-body server-card-body p-4 text-center d-flex justify-content-center flex-column">
+                  <div class="server-card-icon mb-3  ">
+                    <img src="../assets/images/s1.svg" alt="智能化佈局" class="w-50">
+                  </div>
+                  <h5 class="server-card-title card-title">智能化佈局管理</h5>
                 </div>
-                <h5 class="server-card-title card-title">智能化佈局管理</h5>
               </div>
-            </div>
+           </div>
       
-            <div class="card server-card">
-              <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
-                <div class="server-card-icon mb-3">
-                  <img src="../assets/images/s2.svg" alt="安全性" class="w-50">
+           <div class="col-3">
+              <div class="card server-card">
+                <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
+                  <div class="server-card-icon mb-3">
+                    <img src="../assets/images/s2.svg" alt="安全性" class="w-50">
+                  </div>
+                  <h5 class="server-card-title card-title">安全化雲端系統</h5>
                 </div>
-                <h5 class="server-card-title card-title">安全化雲端系統</h5>
               </div>
-            </div>
+           </div>
       
-            <div class="card server-card">
-              <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
-                <div class="server-card-icon mb-3">
-                  <img src="../assets/images/s3.svg" alt="監控系統" class="w-50">
+           <div class="col-3">
+              <div class="card server-card">
+                <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
+                  <div class="server-card-icon mb-3">
+                    <img src="../assets/images/s3.svg" alt="監控系統" class="w-50">
+                  </div>
+                  <h5 class="server-card-title card-title">全天監控</h5>
                 </div>
-                <h5 class="server-card-title card-title">全天監控</h5>
               </div>
             </div>
-          </div>
+           </div>
+           <div class="col-3"></div>
+          
       
           <!-- 第二排 -->
-          <div class="d-flex justify-content-end gap-4">
-            <div class="card server-card">
-              <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
-                <div class="server-card-icon mb-3">
-                  <img src="../assets/images/s4.svg" alt="一站式服務" class="w-50">
+          <div class="row px-5 ">
+            <div class="col-3"></div>
+            <div class="col-3">
+              <div class="card server-card">
+                <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
+                  <div class="server-card-icon mb-3">
+                    <img src="../assets/images/s4.svg" alt="一站式服務" class="w-50">
+                  </div>
+                  <h5 class="server-card-title card-title">一站式管理服務</h5>
                 </div>
-                <h5 class="server-card-title card-title">一站式管理服務</h5>
               </div>
             </div>
       
-            <div class="card server-card">
-              <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
-                <div class="server-card-icon mb-3">
-                  <img src="../assets/images/s5.svg" alt="AR/VR" class="w-50">
+           <div class="col-3">
+              <div class="card server-card">
+                <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
+                  <div class="server-card-icon mb-3">
+                    <img src="../assets/images/s5.svg" alt="AR/VR" class="w-50">
+                  </div>
+                  <h5 class="server-card-title card-title">AR/VR服務開發</h5>
                 </div>
-                <h5 class="server-card-title card-title">AR/VR服務開發</h5>
               </div>
-            </div>
+           </div>
       
-            <div class="card server-card">
-              <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
-                <div class="server-card-icon mb-3">
-                  <img src="../assets/images/s6.svg" alt="建模服務" class="w-50">
+           <div class="col-3">
+              <div class="card server-card">
+                <div class="card-body server-card-body p-4 text-center  d-flex justify-content-center flex-column">
+                  <div class="server-card-icon mb-3">
+                    <img src="../assets/images/s6.svg" alt="建模服務" class="w-50">
+                  </div>
+                  <h5 class="server-card-title card-title">建模與渲染</h5>
                 </div>
-                <h5 class="server-card-title card-title">建模與渲染</h5>
               </div>
-            </div>
+           </div>
           </div>
         </div>
+      </section>
+
+      <section class="work" style="background-image: url('../assets/images/work-bg.png');" >
+          <div class=" my-5">
+            <div class="part-title px-5 pb-3" >
+                <h1 class="position-relative" >服務項目  
+                <img src="../assets/images/about-scratch.png" alt=""></h1>
+                <img  src="../assets/images/Services.svg" alt="">
+            </div>
+            <div class="swiper-container">
+                <!-- 自定義導航按鈕 -->
+                <div class="custom-navigation">
+                    <button class="custom-nav-button custom-prev">←</button>
+                    <button class="custom-nav-button custom-next">→</button>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide">
+                            <div class="portfolio-card">
+                                <img src="../assets/images/w1.png" alt="格萊美公司人資管理系統" class="portfolio-image">
+                                
+                            </div>
+                            <div class="portfolio-title">格萊美公司｜人資管理系統</div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="swiper-slide">
+                            <div class="portfolio-card">
+                                <img src="../assets/images/w2.png" alt="彰化稅務局AR互動" class="portfolio-image">
+                                
+                            </div>
+                            <div class="portfolio-title">彰化稅務局｜AR互動開發片</div>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="swiper-slide">
+                            <div class="portfolio-card">
+                                <img src="../assets/images/w3.png" alt="新北稅捐處" class="portfolio-image">
+                                
+                            </div>
+                            <div class="portfolio-title">新北稅捐處-影片製作</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
       </section>
         
     

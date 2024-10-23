@@ -27,7 +27,7 @@
   .card.server-card {
     box-sizing: border-box;
     position: relative; /* 添加相對定位 */
-    flex: 0 0 263px; /* 改用固定寬度 */
+    width: 263px;
     height: 270px;
     border-radius: 10px;
     border: none;
@@ -81,17 +81,7 @@
     z-index: 2;
   }
   
-  /* 響應式設計 */
-  @media (max-width: 768px) {
-    .card.server-card {
-      flex: 0 0 calc(50% - 0.5rem);
-    }
-    
-    .d-flex {
-      flex-wrap: wrap;
-      justify-content: center !important;
-    }
-  }
+ 
 
 
 

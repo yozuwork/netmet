@@ -1,0 +1,103 @@
+.work{
+    position: relative;
+    padding: 180px 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-card {
+    background: #fff;
+    border-radius: 10px;
+   
+    height: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.swiper-slide-active .portfolio-card {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.swiper-container {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.swiper {
+    overflow: visible;
+    position: relative;
+}
+
+/* 自定義導航按鈕容器 */
+.custom-navigation {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+/* 自定義導航按鈕樣式 */
+.custom-nav-button {
+    width: 24px;
+    height: 24px;
+    background: black;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.custom-nav-button:hover {
+    background: #333;
+}
+
+.portfolio-title {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.swiper-wrapper {
+    align-items: center;
+}
+
+/* 標題區域的樣式 */
+.title-container {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.title-container h2 {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* work 圖標樣式 */
+.work-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
