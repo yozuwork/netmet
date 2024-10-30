@@ -1,0 +1,55 @@
+.about{
+    min-height: 900px;
+    height: auto;
+    width: 100% ;
+    position: relative;
+    display: block;
+    @include large-medium {
+        min-height: 600px;
+     }
+     @include small {
+        min-height: 1236px;
+        display: flex;
+        flex-direction: column;
+       
+     }
+ 
+ }
+ .about-title{
+    width: 70%;
+    @include large-medium {
+       width: 80% ;
+      
+    }
+ }
+ .about-max-phone{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    @include large-medium {
+        width: 80%;
+        
+        
+     }
+ 
+    
+ }
+ .about-blue-bottom{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    z-index: 2;
+ }
+ .about-blue-bottom-sm{
+    position: absolute;
+    bottom:5%;
+    width: 100%;
+    z-index: 2;
+ }
+ .about-bg-bottom{
+    position: absolute;
+    bottom:5%;
+    right:0;
+    width: 23%;
+    z-index: 1;
+ }

@@ -1,0 +1,154 @@
+.contact {
+
+    color: white;
+    background: linear-gradient(180deg, #005FF5 0%, #0B0B32 100%);
+    padding: 150px 0;
+    background-size:cover !important;
+    background-position: top !important;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* 移除預設的 focus 樣式 */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+/* 自定義 focus 效果 */
+.form-control-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-control-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.form-control-wrapper:focus-within::after {
+    width: 100%;
+    animation: ripple 0.6s ease-in-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translateX(-50%) scaleX(0.5);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateX(-50%) scaleX(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-50%) scaleX(1);
+        opacity: 1;
+    }
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    opacity: 0.5;
+    transform: translateX(10px);
+}
+
+.submit-btn {
+    background: linear-gradient(to right, #ff6b6b, #ff8e53);
+    border: none;
+    padding: 10px 40px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.paw-icon {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+.company-info {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    .order-sm-last {
+        order: -1;
+    }
+    .company-info {
+        margin-top: 2rem;
+        font-size: 0.85rem;
+    }
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    .contact-subtitle {
+        font-size: 0.8rem !important;
+    }
+    .submit-btn {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+ /* 新增 textarea 的特定樣式 */
+ .contact-form textarea {
+    resize: none; /* 禁止調整大小 */
+    overflow-y: auto; /* 只允許垂直滾動 */
+    overflow-x: hidden; /* 隱藏水平滾動 */
+}
+
+/* 美化滾動條樣式（可選） */
+.contact-form textarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contact-form textarea::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.contact-form textarea::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.contact-form textarea::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}

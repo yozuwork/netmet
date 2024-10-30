@@ -2,16 +2,74 @@
     position: relative;
     padding: 80px 0;
     overflow: hidden;
+    background-image: url(../images/server-bg.png) ;
+    background-size: cover;
+    background-position: top;
+
+    //方塊 電腦手機均有顯示
     .server-left-top{
         z-index: 0 !important;
         top:1%;
         left: 0%;
+        z-index: 3;
+        @include large{
+            top:45%;
+            right:-10%;
+            left:auto;
+            z-index: 3;
+        }
         
+    }
+    //底部方塊 目前手機顯示
+    .server-right-bottom{
+       display: none;
+        @include large{
+          display: block;
+          bottom: 0%;
+          right: 0%;
+          left:auto;
+        }
+    }
+    // 圓圈波紋 目前手機顯示
+    .server-crimp{
+      display: none;
+      @include large{
+        display: block;
+        bottom:0%;
+        left:0%;
+        width: 100%;
+      }
+    }
+     // 頂部方塊 目前手機顯示
+    .server-sm-obj-top{
+        display: none;
+        @include large{
+          display: block;
+          top:7%;
+          left:3%;
+      }
+    }
+     // 格子狀波紋 目前手機顯示
+    .server-sm-plaid{
+      display: none;
+      @include large{
+        display: block;
+        top:0%;
+        right:0%;
+        width: 80%;
+        z-index: -1;
+       
+    }
+  }
+    
+    @include large{
+     background-image: none;
+     padding: 50px 0 100px 0;
     }
 
 
   }
-  
+ 
   .server::before {
     content: '';
     position: absolute;
@@ -22,9 +80,13 @@
     background: linear-gradient(180deg, #005FF5 0%, #00CDFF 100%);
     transform: rotate(-180deg);
     z-index: -1;
+    
   }
   
   .card.server-card {
+    img{
+       display: inline;
+    }
     box-sizing: border-box;
     position: relative; /* 添加相對定位 */
     width: 263px;
@@ -33,6 +95,23 @@
     border: none;
     background: transparent; /* 確保卡片本身是透明的 */
     overflow: hidden; /* 防止內容溢出 */
+    @include large-max{
+      width: 210.4px;
+      height: 216px;
+    }
+    @include large-medium{
+      width: 184.1px;
+      height: 189px;
+    }
+    @include large{
+      width: 100%;
+      min-height: 270px;
+      height: auto;
+      padding: 50px auto;
+      
+    }
+
+  
   }
   
   .card.server-card::before {
@@ -82,6 +161,7 @@
   }
   
  
+
 
 
 

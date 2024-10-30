@@ -1,68 +1,63 @@
 .header {
     position: relative;
-    height: 900px;
-    overflow: hidden;
-
-    // 通用背景圖片樣式
-    %bg-image {
-        position: absolute;
-        z-index: 1;
-    }
-    .mouse{
-        @extend %bg-image;
-        bottom: 35px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    // 頂部背景
-    &-bg-top {
-        @extend %bg-image;
-        top: 0;
-        left: 0;
-        max-width: 666px;
-    }
-
-    // 底部背景
-    &-bg-bottom {
-        @extend %bg-image;
-        bottom: 0;
-        left: 0;
-        max-width: 498px;
-    }
-
-    // 幾何背景
-    &-geometry {
-        @extend %bg-image;
-        top: 4%;
-        right:100px;
-
-        z-index: 0;
-        max-width: 929px;
-    }
-
-    // 容器
-    .container {
-        height: 100%; /* 設置容器高度為視窗高度 */
+    min-height: 900px;
+    height: auto;
+    
+    @include large-medium {
+        min-height: 600px;
+     }
+     @include small {
+        min-height: 1236px;
         display: flex;
-        align-items: center; /* 垂直置中 */
-    }
+        flex-direction: column;
+     }
 
-    // 中心物件
-    .computer{
-        width: 666px;
-        z-index: 1;
-        position: relative;
+}
+
+//電腦板調整
+.computer{
+    position: absolute;
+    bottom:25%;
+    left: 50%;
+    width: 50%;
+    max-width: 800px;
+  
+     
+}   
+.mouse{
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
    
-        
-    }
-    .title{
-        position: relative;
-        z-index: 1;
-    }
-    .title-text{
-        max-width: 229px;
-    }
-    .title-netmet{
-        max-width: 461px;
-    }
+ 
+ 
+}
+
+
+
+
+//手機板調整
+.sm-header-bg img{
+    width: 80%;
+    
+ }
+ .sm-computer{
+    position: absolute;
+    bottom:0%;
+    right:0%;
+    width: 100%;
+}
+
+
+.header-sm-left{
+    position: absolute;
+    bottom:9%;
+    width: 70%;
+    left: 0;
+}
+.header-sm-right-bottom{
+    position: absolute;
+}
+.header-sm-right-middle{
+    position: absolute;
 }

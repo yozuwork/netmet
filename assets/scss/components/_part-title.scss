@@ -1,4 +1,12 @@
 .part-title{
     position: relative;
     z-index: 1;
+    color: $color_blue ;
+
+    h1{
+        font-weight: 700 !important;
+    }
+    .subtitle{
+        margin-left: 3px;
+    }
 }

@@ -1,10 +1,22 @@
 .work{
     position: relative;
-    padding: 180px 0;
+    padding: 250px 0;
     overflow: hidden;
     background-size: cover;
     background-position: center;
+    background-image: url(../images/work-bg.png) ;
+  
 }
+.work-cat-box{
+    bottom:5%;
+    left: 50%;
+    
+ 
+}
+
+  
+
+
 
 .portfolio-card {
     background: #fff;
@@ -43,21 +55,22 @@
 /* 自定義導航按鈕容器 */
 .custom-navigation {
     position: absolute;
-    right: 0;
-    top: -30px;
+    right: 10%;
+    top: -100px;
     display: flex;
-    gap: 8px;
+    gap: 18px;
     z-index: 10;
 }
 
 /* 自定義導航按鈕樣式 */
 .custom-nav-button {
-    width: 24px;
-    height: 24px;
-    background: black;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     border: none;
-    color: white;
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,6 +79,7 @@
     padding: 0;
     transition: background-color 0.3s;
 }
+
 
 .custom-nav-button:hover {
     background: #333;
@@ -76,7 +90,19 @@
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #0A0A55;
+    border-radius: 15px;
 }
+
+/* Rectangle 77 */
+
+
+
+
+
+
+
 
 .swiper-wrapper {
     align-items: center;
@@ -100,4 +126,52 @@
     display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
+}
+
+
+
+.work-mini{
+    position: relative;
+    .plaid{
+        position: absolute;
+        top:10%;
+        right:0;
+        z-index: -1;
+  
+    }
+    .work_item_wrap {
+
+        margin: 2rem auto;
+      
+      
+    }
+    .work-sm-cat{
+        margin-top: 1rem;
+    }
+        
+
+    .work_item:hover {
+        transform: translateY(-5px);
+    }
+
+    /* 圖片容器 */
+
+
+    .work_img_wrap {
+        height: 300px;
+      
+    }
+
+    .work_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px ;
+       
+    }
+
+
+   
+
+
 }

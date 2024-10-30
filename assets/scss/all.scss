@@ -7,15 +7,19 @@
 @import 'helpers/variables';
 @import 'helpers/variables-dark';
 @import 'helpers/base';
-
+@import 'helpers/mixin';
+@import 'helpers/helpers';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 
 @import 'components/header';
+@import 'components/about';
 @import 'components/server';
 @import 'components/work';
+@import 'components/contact';
 @import 'components/button';
 @import 'components/part-title';
+@import 'components/cat-box';
 
 
 $border-radius : 15px;
@@ -58,52 +62,4 @@ $border-radius : 15px;
 
 
 
-.about{
-   height: 900px;
-   width: 100% ;
-   position: relative;
 
-    // 通用背景圖片樣式
-    %bg-image {
-      position: absolute;
-      z-index: 1;
-    }
-    // 頂部背景
-    .about-bg-top {
-      @extend %bg-image;
-      top: 0;
-      left: 0;
-      max-width: 666px;
-      z-index: 1;
-  }
-
-  // 底部背景
-  .about-bg-bottom {
-      @extend %bg-image;
-      bottom: 0;
-      right: 0;
-      max-width: 498px;
-  }
-  .about-bg-max{
-    @extend %bg-image;
-    top: 2.56%;
-    left: 45%;
-    width: 60%;
-    max-width: 831px;
-
-  }
-  .about-blue-bottom{
-    @extend %bg-image;
-    bottom: 0;
-    width: 100%;
-  }
-  
-
-}
-.about-cat-box{
-  position: absolute;
-  bottom:0%;
-  left: 10%;
-  z-index: 9999999 !important ;
-
-}
