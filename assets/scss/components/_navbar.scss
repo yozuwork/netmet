@@ -1,0 +1,255 @@
+// Navbar styles
+.navbar {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  z-index: 99999999;
+  background: #fff;
+  
+  a {
+      color: $color_blue !important;
+      font-weight: 700;
+  }
+
+  .logo {
+      width: 200px;
+  }
+
+  &.navbar-gradient-bottom {
+      position: relative;
+      transition: box-shadow 0.3s ease;
+
+      &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: $gradient-primary;
+          transition: opacity 0.3s ease;
+      }
+
+      &.scrolled {
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+          &::after {
+              opacity: 0;
+          }
+      }
+  }
+
+  .navbar-nav {
+      .nav-item {
+          margin-right: 1.5rem;
+
+          &:last-child {
+              margin-right: 0;
+          }
+      }
+
+      .nav-link {
+          padding: 0.5rem 0;
+          display: flex;
+          align-items: center;
+
+          svg {
+              width: 24px;
+              height: 24px;
+          }
+
+          span {
+              vertical-align: middle;
+              line-height: 1;
+          }
+      }
+  }
+}
+
+// Air Contact styles
+.air-contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, $color_blue 0%, #000033 100%);
+  z-index: 999999999;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  color: white;
+
+  // 初始圓形裁切
+  clip-path: circle(0% at calc(100% - 30px) 30px);
+  transition: clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.4s ease,
+              visibility 0s linear 0.6s;
+
+  &.active {
+      opacity: 1;
+      visibility: visible;
+      clip-path: circle(150% at calc(100% - 30px) 30px);
+      transition: clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                 opacity 0.4s ease,
+                 visibility 0s linear;
+  }
+
+  .air-contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      opacity: 0;
+      transform: scale(0.98);
+      transition: all 0.4s ease;
+      transition-delay: 0.2s;
+  }
+
+  &.active .air-contact-container {
+      opacity: 1;
+      transform: scale(1);
+  }
+
+  .close-button {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 99999;
+  }
+
+  .menu-section {
+      padding: 4rem 0 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      transition-delay: 0.3s;
+  }
+
+  .menu-item {
+      display: block;
+      color: white !important;
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+          transform: translateX(10px);
+      }
+
+      h3 {
+          margin: 0;
+          font-size: 1.5rem;
+      }
+
+      span {
+          font-size: 0.8rem;
+          opacity: 0.7;
+          text-transform: uppercase;
+      }
+  }
+
+  .contact-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      transition-delay: 0.3s;
+  }
+
+  &.active {
+      .menu-section,
+      .contact-section {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  .contact-form {
+      margin-top: 2rem;
+
+      .form-row {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 1rem;
+          flex-wrap: wrap;
+      }
+
+      .form-group {
+          flex: 1;
+          min-width: 250px;
+      }
+
+      .form-control {
+          width: 100%;
+          padding: 0.8rem;
+          background: rgba(255,255,255,0.1);
+          border: none;
+          color: white;
+          border-radius: 4px;
+
+          &::placeholder {
+              color: rgba(255,255,255,0.7);
+          }
+      }
+
+      .submit-btn {
+          background: $gradient-primary;
+          color: white;
+          border: none;
+          padding: 0.8rem 2rem;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+          font-weight: 700;
+      }
+  }
+
+  .wave-pattern {
+      position: relative;
+
+      &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+          z-index: -1;
+      }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+      will-change: clip-path;
+      
+      .air-contact-container,
+      .menu-section,
+      .contact-section {
+          will-change: transform, opacity;
+      }
+  }
+
+  @media (max-width: 768px) {
+      .air-contact-container {
+          padding: 1rem;
+      }
+
+      .close-button {
+          top: 1rem;
+          right: 1rem;
+      }
+
+      .form-row {
+          flex-direction: column;
+      }
+      
+      .form-group {
+          width: 100%;
+      }
+  }
+}

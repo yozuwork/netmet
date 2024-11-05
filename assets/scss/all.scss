@@ -20,45 +20,9 @@
 @import 'components/button';
 @import 'components/part-title';
 @import 'components/cat-box';
+@import 'components/navbar';
 
 
-$border-radius : 15px;
-.logo{
-    width: 150px;
-}
-
-.navbar-gradient-bottom {
-    position: relative;
-}
-.navbar-gradient-bottom::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: $gradient-primary;
-}
-.navbar-nav .nav-item {
-    margin-right: 1.5rem;
-  }
-  .navbar-nav .nav-item:last-child {
-    margin-right: 0;
-  }
-  .navbar-nav .nav-link {
-    padding: 0.5rem 0;
-    display: flex;
-    align-items: center;  /* 垂直居中對齊 */
-  }
-  .navbar-nav .nav-link svg {
-    width: 24px;
-    height: 24px; /* 將高度調整為與寬度相同 */
-  }
-  /* 為文字添加樣式，確保一致性 */
-  .navbar-nav .nav-link span {
-    vertical-align: middle;
-    line-height: 1;  /* 防止文字行高影響對齊 */
-  }
 
 
 
