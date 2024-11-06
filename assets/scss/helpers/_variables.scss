@@ -410,11 +410,26 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer * .25,   // 0.25rem
+  2: $spacer * .5,    // 0.5rem
+  3: $spacer,         // 1rem
+  4: $spacer * 1.5,   // 1.5rem
+  5: $spacer * 3,     // 3rem
+  6: $spacer * 3.5,   // 3.5rem
+  7: $spacer * 4,     // 4rem
+  8: $spacer * 4.5,   // 4.5rem
+  9: $spacer * 5,     // 5rem
+  10: $spacer * 5.5,  // 5.5rem
+  11: $spacer * 6,    // 6rem
+  12: $spacer * 6.5,  // 6.5rem
+  13: $spacer * 7,    // 7rem
+  14: $spacer * 7.5,  // 7.5rem
+  15: $spacer * 8,    // 8rem
+  16: $spacer * 8.5,  // 8.5rem
+  17: $spacer * 9,    // 9rem
+  18: $spacer * 9.5,  // 9.5rem
+  19: $spacer * 10,   // 10rem
+  20: $spacer * 10.5  // 10.5rem
 ) !default;
 // scss-docs-end spacer-variables-maps
 

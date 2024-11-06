@@ -1,5 +1,5 @@
 .contact {
-
+    
     color: white;
     background: linear-gradient(180deg, #005FF5 0%, #0B0B32 100%);
     padding: 150px 0;
@@ -7,25 +7,25 @@
     background-position: top !important;
 }
 
-.contact-form input,
-.contact-form textarea {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 0;
-    color: white;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: all 0.3s ease;
+input,
+textarea {
+    background: transparent !important; /* 確保背景透明 */
+    border: none; /* 移除邊框 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* 邊框顏色 */
+    border-radius: 0; /* 移除圓角 */
+    color: white; /* 字體顏色 */
+    margin-bottom: 1.5rem; /* 底部邊距 */
+    padding: 0.5rem 0; /* 內邊距 */
+    position: relative; /* 位置設定 */
+    transition: all 0.3s ease; /* 動畫效果 */
 }
 
-/* 移除預設的 focus 樣式 */
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    box-shadow: none;
-    background: transparent;
+/* 將焦點樣式移除 */
+ input:focus,
+  textarea:focus {
+    outline: none; /* 移除輪廓 */
+    box-shadow: none; /* 移除陰影 */
+    background: transparent; /* 確保焦點時背景透明 */
 }
 
 /* 自定義 focus 效果 */

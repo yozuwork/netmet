@@ -38,7 +38,7 @@ document.querySelector('.custom-prev').addEventListener('click', () => {
 document.querySelector('.custom-next').addEventListener('click', () => {
     swiper.slideNext();
 });
-console.log("Hello world!");
+
 
 
 
@@ -86,17 +86,71 @@ document.addEventListener('DOMContentLoaded', function() {
     // 更具體地選擇元素
     const menuToggle = document.getElementById('menuToggle');
     const mobileToggle = document.querySelector('.navbar-toggler');
-    const closeButton = document.querySelector('.air-contact .close-button'); // 改用 class 選擇器
     const airContact = document.getElementById('airContact');
     const navbar = document.querySelector('.navbar');
     
+    // 使用多個選擇器確保能找到關閉按鈕
+    const closeButton = document.querySelector('.air-contact .close-button, .close-button');
+    
+    // 確保元素存在
+    if (!airContact) {
+        console.error('Air contact element not found');
+        return;
+    }
+    
+    // 新增: 處理選單項目導航
+    function handleMenuItemClick(e) {
+        const menuItem = e.target.closest('.menu-item');
+        if (menuItem) {
+            // 獲取選單項目的文字內容
+            const menuText = menuItem.querySelector('h1').textContent.trim();
+            
+            // 根據選單項目文字決定導航位置
+            let targetSection;
+            switch (menuText) {
+                case '關於我們':
+                    targetSection = '#about';
+                    break;
+                case '服務項目':
+                    targetSection = '#server';
+                    break;
+                case '專案時機':
+                    targetSection = '#work';
+                    break;
+                // 可以根據需要添加更多案例
+            }
+            
+            // 如果找到對應的區段，進行導航
+            if (targetSection) {
+                const targetElement = document.querySelector(targetSection);
+                if (targetElement) {
+                    // 關閉選單
+                    closeAirContact();
+                    
+                    // 平滑滾動到目標位置
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300); // 等待選單關閉動畫完成
+                }
+            }
+        }
+    }
+
     function openAirContact(e) {
         e.preventDefault();
+        e.stopPropagation();
         airContact.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
     
-    function closeAirContact() {
+    function closeAirContact(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
         airContact.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
@@ -113,25 +167,21 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileToggle.addEventListener('click', openAirContact);
     }
     
-    // 關閉按鈕 - 使用新的選擇器
-    if (closeButton) {
-        closeButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            closeAirContact();
-        });
-    } else {
-        console.error('Close button not found');
-    }
-    
-    // 選單項目點擊後關閉
-    document.querySelectorAll('.menu-item').forEach(item => {
-        item.addEventListener('click', closeAirContact);
+    // 關閉按鈕 - 使用事件委派
+    document.addEventListener('click', function(e) {
+        const closeBtn = e.target.closest('.close-button');
+        if (closeBtn && airContact.contains(closeBtn)) {
+            closeAirContact(e);
+        }
     });
     
-    // 點擊外部關閉
+    // 修改: 選單項目點擊處理
+    airContact.addEventListener('click', handleMenuItemClick);
+    
+    // 點擊外部關閉 - 改進版本
     airContact.addEventListener('click', function(e) {
         if (e.target === airContact) {
-            closeAirContact();
+            closeAirContact(e);
         }
     });
     
@@ -141,17 +191,68 @@ document.addEventListener('DOMContentLoaded', function() {
             closeAirContact();
         }
     });
-
+    
     // 處理滾動效果
+    let scrollTimer;
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (scrollTimer) {
+            clearTimeout(scrollTimer);
+        }
+        
+        scrollTimer = setTimeout(function() {
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, 10);
+    });
+    
+    // 添加觸摸事件支持
+    let touchStartY = 0;
+    airContact.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    airContact.addEventListener('touchend', function(e) {
+        const touchEndY = e.changedTouches[0].clientY;
+        const yDiff = touchEndY - touchStartY;
+        
+        if (yDiff > 50 && e.target === airContact) {
+            closeAirContact();
         }
     });
-
-    // 添加調試日誌
-    console.log('Close button:', closeButton);
-    console.log('Air contact:', airContact);
 });
+
+
+
+
+//使用JQ抓取視窗滑鼠位置
+
+//滑鼠正在移動的時候 抓取一個事件
+$(window).mousemove(function(evt){
+    var x = evt.pageX; //滑鼠移動時X座標
+    var y = evt.pageY; //滑鼠移動時Y座標
+    console.log(`${x},${y}`);
+    
+   $("#cross").css("left",x+"px");
+   $("#cross").css("top",y+"px");
+ 
+   var about_cat = $(".about_cat").offset().left + $(".about_cat").width()/2 ;
+
+    //中間位置
+ 
+   
+ 
+   if(Math.abs(x-about_cat)<80){
+      $(".about_cat").css("bottom","0px");
+   }else{
+     $(".about_cat").css("bottom","-100px");
+   }
+
+  
+   
+ 
+   
+   
+ });

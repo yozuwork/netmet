@@ -15,6 +15,9 @@
      }
  
  }
+ .about_cat{
+   transition: bottom 0.5s ease;
+ }
  .about-title{
     width: 70%;
     @include large-medium {

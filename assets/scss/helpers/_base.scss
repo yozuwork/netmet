@@ -1,9 +1,74 @@
 
+@font-face {
+    font-family: 'NYXERIN';
+    src: url('../assets/NYXERIN.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+.nyxerin-font{
+    font-family: 'NYXERIN', sans-serif ;
+}
+
+
 *{
    font-weight: 500 ;
    font-family: 'Noto Sans TC', sans-serif;
    
 }
+input,textarea {
+            width: 100%;
+            background: transparent;
+            border: none !important;
+            border-radius: 0 !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+          
+            color: white !important;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease !important;
+
+            &:focus {
+                outline: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                color: white !important;
+            }
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.7) !important;
+                transition: all 0.3s ease !important;
+            }
+
+            &:focus::placeholder {
+                opacity: 0.5 !important;
+                transform: translateX(10px) !important;
+            }
+        }
+
+        textarea {
+            resize: none;
+            overflow-y: auto;
+            overflow-x: hidden;
+            min-height: 100px;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 3px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 3px;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.4);
+                }
+            }
+        }
 body{
    
     font-size: 1rem;

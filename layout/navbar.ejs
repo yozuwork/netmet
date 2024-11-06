@@ -36,67 +36,110 @@
     </div>
   </nav>
 
-  <div class="air-contact" id="airContact">
-    <div class="air-contact-container wave-pattern">
-        <button class="close-button" id="closeMenu" aria-label="Close menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-
-        <div class="menu-section">
-            <h1 class="display-5">關於我們<span class="paw-icon">🐾</span></h1>
-            <h2 class="text-uppercase about-subtitle">ABOUT</h2>
-
-            <div class="menu-links">
-                <a href="#about" class="menu-item" id="menuAbout">
-                    <h3>關於我們</h3>
-                    <span>ABOUT</span>
-                </a>
-                <a href="#work" class="menu-item" id="menuWork">
-                    <h3>專案實績</h3>
-                    <span>WORK</span>
-                </a>
-                <a href="#services" class="menu-item" id="menuServices">
-                    <h3>服務項目</h3>
-                    <span>SERVICES</span>
-                </a>
+<div class="air-contact" id="airContact">
+    <img class="contact-ripple d-none d-sm-block"  src="../assets/images/contact/contact-ripple.svg" alt="">
+    <img class="contact-ripple-sm d-block d-sm-none"  src="../assets/images/contact/contact-ripple-sm.svg" alt="">
+    <div class="container d-none d-sm-block">
+      <button class="close-button" id="closeMenu" aria-label="Close menu">
+        <span class="nyxerin-font me-2">CLOSE</span>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.34375 22.6563L22.6563 2.34375M2.34375 2.34375L22.6562 22.6563" stroke="white" stroke-width="2.11" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </button>
+    </div>
+  
+    <div class="air-contact-container mt-0 mt-sm-20  py-3" >
+        <div class="container " >
+          <div class="row d-flex d-sm-none mb-10">
+            <div class="col-12 d-flex justify-content-end ">
+              <button class="close-button " id="closeMenu" aria-label="Close menu">
+                <span class="nyxerin-font me-2">CLOSE</span>
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.34375 22.6563L22.6563 2.34375M2.34375 2.34375L22.6562 22.6563" stroke="white" stroke-width="2.11" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </button>
             </div>
-        </div>
-
-        <div class="contact-section">
-            <h3>聯絡我們</h3>
-            <form class="contact-form" id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="您的名稱*" required id="userName">
+          </div>
+          <div class="row" >
+            <div class="col-sm-5 ">
+                <div class="menu-item">
+                    <h1 class="fw-bolder">關於我們 <img class="d-inline"  src="../assets/images/cat-paw-light.svg" alt=""></h1>
+                    <span class="nyxerin-font fs-5 fw-normal ">ABOUT</span>
+                </div>
+                
+                <div class="menu-item">
+                  <h1 class="fw-bolder">專案時機 </h1>
+                  <span class="nyxerin-font fs-5 ">WORK</span>
+                </div>
+                
+                <div class="menu-item">
+                  <h1 class="fw-bolder">服務項目 </h1>
+                    <span class="nyxerin-font fs-5">SERVICES</span>
+                </div>
+                
+                <div class="circle-pattern"></div>
+            </div>
+    
+            <div class="col-sm-7 ">
+              <div class="menu-item menu-item-contact">
+                    <h1 class="fw-bolder">聯絡我們 </h1>
+                    <span class="nyxerin-font fs-5">CONTACT</span>
+              </div>
+              <form class="navbar-form">
+                <!-- 名稱和電話並排 -->
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="text" class="form-control" placeholder="您的名稱*" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="聯絡電話*" required id="userPhone">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="tel" class="form-control" placeholder="聯絡電話*" required>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="電子郵件*" required id="userEmail">
+                
+                <!-- 電子郵件和公司名稱並排 -->
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="email" class="form-control" placeholder="電子郵件*" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="公司名稱*" required id="companyName">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="信件主旨*" required id="emailSubject">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <textarea class="form-control" rows="4" placeholder="信件內文*" required id="emailContent"></textarea>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="text" class="form-control" placeholder="公司名稱*" required>
+                        </div>
                     </div>
                 </div>
-                <div class="text-end">
-                    <button type="submit" class="submit-btn" id="submitBtn">送出</button>
+                
+                <!-- 信件主旨獨立一行 -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-control-wrapper">
+                            <input type="text" class="form-control" placeholder="信件主旨*" required>
+                        </div>
+                    </div>
                 </div>
-            </form>
+                
+                <!-- 信件內文獨立一行 -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-control-wrapper">
+                            <textarea class="form-control" rows="4" placeholder="信件內文*" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 送出按鈕 -->
+                <div class="text-center text-sm-end mb-5">
+                  <button class="btn send-btn btn-light mt-3 py-3 w-100" style="border:none">
+                    送出
+                  </button>
+                </div>
+            </div>
+          </div>
         </div>
     </div>
 </div>
