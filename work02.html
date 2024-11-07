@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
+    <title>奈特米科技</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    
+    <script type="module" crossorigin src="/netmet/assets/main-3e48b3a3.js"></script>
+    <link rel="stylesheet" href="/netmet/assets/main-c7c81511.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-gradient-bottom">
+    <div class="container">
+      <!-- Left side with icon -->
+      <a class="navbar-brand" href="/pages/">
+        <img class="logo" src="/netmet/assets/logo-bf6ef44e.svg" alt="Logo">
+      </a>
+      
+      <!-- Custom toggler for mobile view -->
+      <button class="navbar-toggler border-0" type="button" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 6H21M3 12H12M3 18H21" stroke="#0A0A55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <!-- Right side with navigation items -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/#about">關於我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/#server">服務項目</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/#work">專案實績</a>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+            <a class="nav-link menuToggle" href="#" id="menuToggle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6H21M3 12H12M3 18H21" stroke="#0A0A55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="air-contact" id="airContact">
+    <img class="contact-ripple d-none d-sm-block"  src="/netmet/assets/contact-ripple-38c5eeef.svg" alt="">
+    <img class="contact-ripple-sm d-block d-sm-none"  src="/netmet/assets/contact-ripple-sm-99f03726.svg" alt="">
+    <div class="container d-none d-sm-block">
+      <button class="close-button" id="closeMenu" aria-label="Close menu">
+        <span class="nyxerin-font me-2">CLOSE</span>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.34375 22.6563L22.6563 2.34375M2.34375 2.34375L22.6562 22.6563" stroke="white" stroke-width="2.11" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </button>
+    </div>
+  
+    <div class="air-contact-container mt-0 mt-sm-20  py-3" >
+        <div class="container " >
+          <div class="row d-flex d-sm-none mb-10">
+            <div class="col-12 d-flex justify-content-end ">
+              <button class="close-button " id="closeMenu" aria-label="Close menu">
+                <span class="nyxerin-font me-2">CLOSE</span>
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.34375 22.6563L22.6563 2.34375M2.34375 2.34375L22.6562 22.6563" stroke="white" stroke-width="2.11" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </button>
+            </div>
+          </div>
+          <div class="row" >
+            <div class="col-sm-5 ">
+                <div class="menu-item">
+                    <h1 class="fw-bolder">關於我們 <img class="d-inline"  src="/netmet/assets/cat-paw-light-9f14a505.svg" alt=""></h1>
+                    <span class="nyxerin-font fs-5 fw-normal ">ABOUT</span>
+                </div>
+                
+                <div class="menu-item">
+                  <h1 class="fw-bolder">專案實績 </h1>
+                  <span class="nyxerin-font fs-5 ">WORK</span>
+                </div>
+                
+                <div class="menu-item">
+                  <h1 class="fw-bolder">服務項目 </h1>
+                    <span class="nyxerin-font fs-5">SERVICES</span>
+                </div>
+                
+                <div class="circle-pattern"></div>
+            </div>
+    
+            <div class="col-sm-7 ">
+              <div class="menu-item menu-item-contact">
+                    <h1 class="fw-bolder">聯絡我們 </h1>
+                    <span class="nyxerin-font fs-5">CONTACT</span>
+              </div>
+              <form class="navbar-form">
+                <!-- 名稱和電話並排 -->
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="text" class="form-control" placeholder="您的名稱*" required>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="tel" class="form-control" placeholder="聯絡電話*" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 電子郵件和公司名稱並排 -->
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="email" class="form-control" placeholder="電子郵件*" required>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-control-wrapper">
+                            <input type="text" class="form-control" placeholder="公司名稱*" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 信件主旨獨立一行 -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-control-wrapper">
+                            <input type="text" class="form-control" placeholder="信件主旨*" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 信件內文獨立一行 -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-control-wrapper">
+                            <textarea class="form-control" rows="4" placeholder="信件內文*" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 送出按鈕 -->
+                <div class="text-center text-sm-end mb-5">
+                  <button class="btn send-btn btn-light mt-3 py-3 w-100" style="border:none">
+                    送出
+                  </button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>  
+    <div id="cross"></div>
+    <section class="work-page">
+        <img  class="work-bg-top" src="/netmet/assets/header-bg-top-d8fd4172.png" alt="Top background" >   
+        <div class="container py-5">
+            <div class="my-5 custom-underline">
+                <h1 class="text-primary fw-bolder">玄通營造｜企業官方網站</h1>
+                <p class="mt-5 text-primary">類型：官方網站 <br>
+                   client：玄通營造股份有限公司</p>
+                <a class="mb-5 d-block"  href="https://xt-const.com.tw/">
+                    <button  type="button" class=" btn send-btn btn-light mt-3 py-3 w-100">
+                        瀏覽網站
+                    </button>
+                </a>   
+            </div>
+            <div>
+               <img class="w-100"  src="/netmet/assets/wd02-b585fc0b.png" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <div class="position-relative">
+        <img class="w-100" src="/netmet/assets/work-page-bottom-74e73cc2.jpg" alt="">
+        <a href="/pages/#work">
+            <button  type="button" class="back-btn btn send-btn btn-light mt-3 py-3 w-100">
+                回到列表
+            </button>
+        </a>
+    </div>
+    <footer class="footer py-5" style="background-color: #0B0B32;">
+    <div class="container">
+      <span class="text-light">Copyright©2024 奈特米科技有限公司.All Rights Reserved. Design by NETMET</span>
+    </div>
+</footer>  
+    
+     
+  </body>
+</html>
+
+
+
