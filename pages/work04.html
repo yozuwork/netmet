@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <title>奈特米科技</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+
+  </head>
+  <body>
+    <%- include('./layout/navbar') %>  
+    <div id="cross"></div>
+    <section class="work-page">
+        <img  class="work-bg-top" src="../assets/images/header-bg-top.png" alt="Top background" >   
+        <div class="container py-5">
+            <div class="my-5 custom-underline">
+                <h1 class="text-primary fw-bolder">彰化稅務局｜AR互動明信片</h1>
+                <p class="mt-5 text-primary">類型：官方網站 <br>
+                   client：彰化縣政府稅務局</p>
+              
+            </div>
+            <div>
+               <img class="w-100"  src="../assets/images/work/wd04.png" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <div class="position-relative">
+        <img class="w-100" src="../assets/images/work/work-page-bottom.jpg" alt="">
+        <a href="/pages/#work">
+            <button  type="button" class="back-btn btn send-btn btn-light mt-3 py-3 w-100">
+                回到列表
+            </button>
+        </a>
+    </div>
+    <%- include('./layout/footer') %>  
+    <script type="module" src="../main.js"></script>
+     
+  </body>
+</html>
+
+
+

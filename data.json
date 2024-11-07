@@ -1,0 +1,19 @@
+{
+    "portfolioItems": [
+      {
+        "id": 1,
+        "name": "格萊美公司｜人資管理系統",
+        "img_path": "../assets/images/work/w1.png"
+      },
+      {
+        "id": 2,
+        "name": "彰化稅務局｜AR互動開發片",
+        "img_path": "../assets/images/work/w2.png"
+      },
+      {
+        "id": 3,
+        "name": "新北稅捐處-影片製作",
+        "img_path": "../assets/images/work/w3.png"
+      }
+    ]
+  }

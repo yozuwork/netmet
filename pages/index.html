@@ -9,111 +9,20 @@
     <title>奈特米科技</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    
   </head>
   <body>
-    <div id="cross"></div>
-      <%- include('./layout/navbar') %>
-      <%- include('./layout/header') %>
-      <%- include('./layout/about') %>
-      <%- include('./layout/server') %>
-      <%- include('./layout/work') %>
-     
-
-      
-        
-      <section class="contact  d-flex  justify-content-center align-items-center" id="contact">
-        <div class="container wave-pattern">
-          <!-- 第一個 row - 標題 -->
-          <div class="row mb-4">
-              <div class="col-12">
-                  <h1 class="display-5">聯絡我們<span class="paw-icon">🐾</span></h1>
-                  <h2 class="text-uppercase contact-subtitle" style="font-size: 0.9rem;">CONTACT</h2>
-              </div>
-          </div>
-  
-          <!-- 第二個 row - 內容區 -->
-          <div class="row">
-              <!-- 表單區域 -->
-              <div class="col-sm-6 order-sm-last">
-                <form class="contact-form">
-                  <!-- 名稱和電話並排 -->
-                  <div class="row">
-                      <div class="col-12 col-sm-6 text-light">
-                          <div class="form-control-wrapper ">
-                              <input type="text" class="form-control  text-light " placeholder="您的名稱*" required>
-                          </div>
-                      </div>
-                      <div class="col-12 col-sm-6">
-                          <div class="form-control-wrapper">
-                              <input type="tel" class="form-control" placeholder="聯絡電話*" required>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- 電子郵件和公司名稱並排 -->
-                  <div class="row">
-                      <div class="col-12 col-sm-6">
-                          <div class="form-control-wrapper">
-                              <input type="email" class="form-control" placeholder="電子郵件*" required>
-                          </div>
-                      </div>
-                      <div class="col-12 col-sm-6">
-                          <div class="form-control-wrapper">
-                              <input type="text" class="form-control" placeholder="公司名稱*" required>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- 信件主旨獨立一行 -->
-                  <div class="row">
-                      <div class="col-12">
-                          <div class="form-control-wrapper">
-                              <input type="text" class="form-control" placeholder="信件主旨*" required>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- 信件內文獨立一行 -->
-                  <div class="row">
-                      <div class="col-12">
-                          <div class="form-control-wrapper">
-                              <textarea class="form-control" rows="4" placeholder="信件內文*" required></textarea>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- 送出按鈕 -->
-                  <div class="text-center text-sm-end">
-                      <button type="submit" class="submit-btn btn text-white">送出</button>
-                  </div>
-              </div>
-  
-              <!-- 公司資訊 -->
-              <div class="col-sm-6">
-                  <div class="company-info">
-                      <p>若有任何關於我們公司或服務的疑問，歡迎聯絡我們。<br>我們會盡快回應。</p>
-                      
-                      <div class="mt-4">
-                          <p class="mb-2">+886(02)2965-3715</p>
-                          <p class="mb-2">service@netmet.tech</p>
-                          <p class="mb-2">234新北市永和區保生路1號12樓之5</p>
-                          <p class="mb-2">12F.-5, No.1, Baosheng Rd., Yonghe Dist., New Taipei City 234307, Taiwan (R.O.C.)</p>
-                          <p class="mt-4 mb-0">營業時間：平日週一～週五09:00-18:00</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>   
-      </section>
-      
-
-     <footer class="footer py-5" style="background-color: #0B0B32;">
-         <div class="container">
-           <span class="text-light">Copyright©2024 奈特米科技有限公司.All Rights Reserved. Design by NETMET</span>
-         </div>
-     </footer>
+        <div id="cross"></div>
+        <%- include('./layout/navbar') %>
+        <%- include('./layout/header') %>
+        <%- include('./layout/about') %>
+        <%- include('./layout/server') %>
+        <%- include('./layout/works') %>
+        <%- include('./layout/contact') %>
     
+        <%- include('./layout/footer') %>
    
+      
     <script type="module" src="../main.js"></script>
      
   </body>
