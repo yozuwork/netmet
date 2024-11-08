@@ -90,13 +90,13 @@ function initializeMenu() {
         let targetUrl;
         switch (menuText) {
             case '關於我們':
-                targetUrl = '/pages/#about';
+                targetUrl = '/netmet/#about';
                 break;
             case '服務項目':
-                targetUrl = '/pages/#server';
+                targetUrl = '/netmet/#server';
                 break;
             case '專案實績':
-                targetUrl = '/pages/#work';
+                targetUrl = '/netmet/#work';
                 break;
         }
 
