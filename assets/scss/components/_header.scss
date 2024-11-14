@@ -1,7 +1,74 @@
 .header {
     position: relative;
     min-height: 900px;
+ 
     height: auto;
+    overflow: hidden;
+    
+    
+    .pc{
+        position: absolute;
+        top: 22.33%;
+    left: 41.38%;
+        width: 50%;
+        z-index: 6;
+    }
+    .one-obj{
+        position: absolute;
+        top: 16.22%;
+        left: 43.93%;
+        width: 17%;
+        z-index: 5;
+    }
+    .two-obj{
+        top: 22.44%;
+    left: 38.99%;
+        width: 15.72%;
+    }
+    .three-obj{
+        top: 28.33%;
+        left: 32.22%;
+        width: 20.18%;
+    }
+    .four-obj{
+        top: 57.78%;
+        left: 27.84%;
+        width: 10.73%;
+    }
+    .five-obj{
+        top: 16.11%;
+    left: 73.38%;
+    width: 13.31%;
+    z-index: 7;
+    }
+    .six-obj{
+        top: 8.56%;
+    left: 80.37%;
+        width: 8.43%;
+        z-index: 8;
+    }
+    .seven-obj{
+        top: 59.89%;
+        left: 75.65%;
+        width: 14.86%;
+    }
+    .eight-obj{
+        top: 47.56%;
+        left: 82.14%;
+        width: 9.04%;
+        z-index: 6;
+    }
+    .nine-obj{
+        top: 47.44%;
+        left: 71.38%;
+        width: 16.42%;
+    }
+    .ten-obj{
+        top: 37.78%;
+        left: 76.82%;
+        width: 5.93%;
+        z-index: 7;
+    }
     
     @include large-medium {
         min-height: 600px;
@@ -33,7 +100,13 @@
  
 }
 
-
+.header-bg-bottom{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 40%;
+    max-width: 500px;
+}
 
 
 //手機板調整

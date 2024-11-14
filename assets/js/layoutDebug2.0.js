@@ -1,6 +1,6 @@
 // layoutDebug2.0.js
 
-export function layoutDebug() {
+function layoutDebug() {
   console.log("Layout debug initialized");
 
   // Remove existing highlights, info boxes, and panel

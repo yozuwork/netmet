@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'NYXERIN';
-    src: url('../assets/NYXERIN.otf') format('opentype');
+    src: url('@assets/NYXERIN.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -85,4 +85,13 @@ img{
     height: auto;
     display: block;
     vertical-align: bottom;
+}
+
+.scene{
+  
+    width: 100vw !important;
+    height: 100vh !important;
+    vertical-align: middle;
+    border: 3px red solid  ;
+    position: absolute;
 }

@@ -4,6 +4,36 @@
     width: 100% ;
     position: relative;
     display: block;
+    .a01{
+      right: 0;
+      top:0;
+    }
+    .a02{
+      top: 73.73%;
+      left: 39.03%;
+      width: 12.85%;
+    }
+    .a03{
+      top: 31.09%;
+    left: 52.95%;
+    width: 14.34%;
+    }
+    .a04{
+      top: 29.52%;
+      left: 57.63%;
+      width: 26.97%;
+    }
+    .a05{
+      top: 34.12%;
+    left: 65.22%;
+    width: 22%;
+    }
+    .phone{
+      top: 26.82%;
+      left: 42.80%;
+      width: 25.55%;
+    }
+   
     @include large-medium {
         min-height: 600px;
      }
@@ -25,11 +55,18 @@
       
     }
  }
+ .a-pc-obj{
+    display: block;
+    @include large-medium{
+      display: block;
+    }
+ }
  .about-max-phone{
     justify-content: center;
-    display: flex;
+    display: none;
     flex-direction: column;
     @include large-medium {
+         display: flex;
         width: 80%;
         
         
@@ -37,6 +74,17 @@
  
     
  }
+
+ .about-bg-top{
+   position: absolute;
+   top:0;
+   left: 0;
+   width: 50%;
+   max-width: 600px;
+}
+
+
+
  .about-blue-bottom{
     position: absolute;
     bottom:0;

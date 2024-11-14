@@ -17,28 +17,29 @@
 
 
   &.navbar-gradient-bottom {
-      position: relative;
-      transition: box-shadow 0.3s ease;
+    position: relative;
+    transition: box-shadow 0.3s ease;
 
-      &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: $gradient-primary;
-          transition: opacity 0.3s ease;
-      }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: $gradient-primary;
+        transition: opacity 0.3s ease;
+        opacity: 0;  // 初始時底線隱藏
+    }
 
-      &.scrolled {
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    &.scrolled {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-          &::after {
-              opacity: 0;
-          }
-      }
-  }
+        &::after {
+            opacity: 1;  // 加入 .scrolled 類別後，底線顯示
+        }
+    }
+}
 
   .navbar-nav {
       .nav-item {
