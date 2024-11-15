@@ -1,8 +1,4 @@
-
-
-
-
-// 檢查是否在有 Swiper 的頁面
+// Swiper 初始化
 if (document.querySelector('.swiper')) {
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,
@@ -29,7 +25,6 @@ if (document.querySelector('.swiper')) {
         }
     });
 
-    // Swiper 導航按鈕
     const prevButton = document.querySelector('.custom-prev');
     const nextButton = document.querySelector('.custom-next');
     
@@ -37,46 +32,40 @@ if (document.querySelector('.swiper')) {
     if (nextButton) nextButton.addEventListener('click', () => swiper.slideNext());
 }
 
-// 通用導航欄滾動效果
-const navbar = document.querySelector('.navbar-gradient-bottom');
-if (navbar) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+// 選單開關功能
+function openAirContact(e) {
+    const airContact = document.getElementById('airContact');
+    if (!airContact) return;
+    
+    e.preventDefault();
+    e.stopPropagation();
+    airContact.classList.add('active');
+   
+}
+
+function closeAirContact(e) {
+    const airContact = document.getElementById('airContact');
+    if (!airContact) return;
+    
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    airContact.classList.remove('active');
+    document.body.style.overflow = 'auto';
 }
 
 // 選單系統初始化
 function initializeMenu() {
-    // 使用 querySelectorAll 來獲取所有 menuToggle 元素
     const menuToggles = document.querySelectorAll('.menuToggle');
     const mobileToggle = document.querySelector('.navbar-toggler');
     const airContact = document.getElementById('airContact');
+    const closeButtons = document.querySelectorAll('.close-button');
     const navbar = document.querySelector('.navbar');
     
     if (!airContact) {
         console.warn('Air contact element not found');
         return;
-    }
-
-    // 選單開關函數
-    function openAirContact(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        airContact.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeAirContact(e) {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-        airContact.classList.remove('active');
-        document.body.style.overflow = 'auto';
     }
 
     // 處理選單項目點擊
@@ -87,7 +76,6 @@ function initializeMenu() {
         const menuText = menuItem.querySelector('h1')?.textContent.trim();
         if (!menuText) return;
 
-        // 根據選單文字決定導航位置
         let targetUrl;
         switch (menuText) {
             case '關於我們':
@@ -99,6 +87,9 @@ function initializeMenu() {
             case '專案實績':
                 targetUrl = '/netmet/#work';
                 break;
+            case '回到主頁':
+                closeAirContact(); // 先關閉選單
+                break;
         }
 
         if (targetUrl) {
@@ -107,28 +98,22 @@ function initializeMenu() {
         }
     }
 
-    // 為每個 menuToggle 元素綁定事件
+    // 綁定所有關閉按鈕
+    closeButtons.forEach(button => {
+        button.addEventListener('click', closeAirContact);
+    });
+
+    // 綁定選單開啟按鈕
     menuToggles.forEach(toggle => {
         toggle.addEventListener('click', openAirContact);
     });
 
-    // 手機版選單綁定
+    // 手機版選單
     if (mobileToggle) {
         mobileToggle.removeAttribute('data-bs-toggle');
         mobileToggle.removeAttribute('data-bs-target');
         mobileToggle.addEventListener('click', openAirContact);
     }
-
-    // 關閉按鈕
-    document.addEventListener('click', function(e) {
-        const closeBtn = e.target.closest('.close-button');
-        if (closeBtn && airContact.contains(closeBtn)) {
-            closeAirContact(e);
-        }
-    });
-
-    // 選單項目點擊
-    airContact.addEventListener('click', handleMenuItemClick);
 
     // 點擊外部關閉
     airContact.addEventListener('click', function(e) {
@@ -143,6 +128,9 @@ function initializeMenu() {
             closeAirContact();
         }
     });
+
+    // 選單項目點擊
+    airContact.addEventListener('click', handleMenuItemClick);
 
     // 觸控支援
     let touchStartY = 0;
@@ -200,7 +188,6 @@ function initializeSmoothScroll() {
     });
 }
 
-
 // 處理頁面加載後的錨點滾動
 function handleAnchorScroll() {
     if (window.location.hash) {
@@ -216,13 +203,9 @@ function handleAnchorScroll() {
     }
 }
 
-// DOM 載入完成後初始化所有功能
+// DOM 載入完成後初始化
 document.addEventListener('DOMContentLoaded', function() {
     initializeMenu();
     initializeSmoothScroll();
-    initializeMouseTracking();
     handleAnchorScroll();
-
-    // 初始化 layoutDebug 調試功能
-    
 });

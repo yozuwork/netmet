@@ -8,9 +8,12 @@ import './assets/js/cat-anime.js';
 
 
 
-
-
-
+$('.air-content').mousemove(function(evt){
+    $("#cross").css({
+        "left": evt.pageX + "px",
+        "top": evt.pageY + "px"
+    });
+});
 
 
 
