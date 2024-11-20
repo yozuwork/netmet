@@ -8,7 +8,7 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     centeredSlides: true,
     spaceBetween: 20,
-    initialSlide: 0, // 確保從第一張開始
+    initialSlide: 1, // 確保從第一張開始
     effect: 'coverflow',
     coverflowEffect: {
         rotate: 0,

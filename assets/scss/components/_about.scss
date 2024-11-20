@@ -58,7 +58,7 @@
  .a-pc-obj{
     display: block;
     @include large-medium{
-      display: block;
+      display: none;
     }
  }
  .about-max-phone{
