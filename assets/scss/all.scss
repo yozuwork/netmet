@@ -24,3 +24,20 @@
 @import 'components/navbar';
 
 
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* 或其他你想要的背景色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999999;
+}
+
+#loading img {
+    max-width: 400px; /* 根據你的圖片大小調整 */
+    height: auto;
+}

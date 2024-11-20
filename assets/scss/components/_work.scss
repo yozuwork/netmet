@@ -30,6 +30,7 @@
 .swiper-slide-active .portfolio-card {
     opacity: 1;
     transform: scale(1.05);
+    z-index: 999999999 !important;
 }
 
 .portfolio-image {
@@ -48,6 +49,7 @@
 .swiper {
     overflow: visible;
     position: relative;
+    
 }
 
 /* 自定義導航按鈕容器 */
@@ -76,6 +78,7 @@
     font-size: 14px;
     padding: 0;
     transition: background-color 0.3s;
+    z-index: 999999999 !important;
 }
 
 

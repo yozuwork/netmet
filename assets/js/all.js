@@ -1,59 +1,70 @@
-// Swiper 初始化
-if (document.querySelector('.swiper')) {
-    const swiper = new Swiper('.swiper', {
-        slidesPerView: 1,
-        centeredSlides: true,
-        spaceBetween: 20,
-        initialSlide: 1,
-        effect: 'coverflow',
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            992: {
-                slidesPerView: 2.5,
-                spaceBetween: 80,
-            }
-        }
-    });
 
+
+
+
+
+// 檢查是否在有 Swiper 的頁面
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 20,
+    initialSlide: 0, // 確保從第一張開始
+    effect: 'coverflow',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+    },
+    loop: false, // 如果希望到達末尾時不循環，設定為 false
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        992: {
+            slidesPerView: 2.5,
+            spaceBetween: 80,
+        }
+    },
+    navigation: {
+        nextEl: '.custom-next',
+        prevEl: '.custom-prev',
+    }
+});
+
+// Swiper 實例監聽滑動事件，更新按鈕狀態
+swiper.on('slideChange', () => {
     const prevButton = document.querySelector('.custom-prev');
     const nextButton = document.querySelector('.custom-next');
-    
-    if (prevButton) prevButton.addEventListener('click', () => swiper.slidePrev());
-    if (nextButton) nextButton.addEventListener('click', () => swiper.slideNext());
-}
 
-// 選單開關功能
-function openAirContact(e) {
-    const airContact = document.getElementById('airContact');
-    if (!airContact) return;
-    
-    e.preventDefault();
-    e.stopPropagation();
-    airContact.classList.add('active');
-   
-}
-
-function closeAirContact(e) {
-    const airContact = document.getElementById('airContact');
-    if (!airContact) return;
-    
-    if (e) {
-        e.preventDefault();
-        e.stopPropagation();
+    // 當前是第一張時，禁用 prev 按鈕
+    if (swiper.isBeginning) {
+        prevButton.setAttribute('disabled', 'true');
+    } else {
+        prevButton.removeAttribute('disabled');
     }
-    airContact.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
+
+    // 當前是最後一張時，禁用 next 按鈕
+    if (swiper.isEnd) {
+        nextButton.setAttribute('disabled', 'true');
+    } else {
+        nextButton.removeAttribute('disabled');
+    }
+});
+
+// 初始化按鈕狀態（防止頁面加載後狀態不正確）
+document.addEventListener('DOMContentLoaded', () => {
+    if (swiper.isBeginning) {
+        document.querySelector('.custom-prev').setAttribute('disabled', 'true');
+    }
+    if (swiper.isEnd) {
+        document.querySelector('.custom-next').setAttribute('disabled', 'true');
+    }
+});
+
+
 
 // 選單系統初始化
 function initializeMenu() {
@@ -68,33 +79,50 @@ function initializeMenu() {
         return;
     }
 
-    // 處理選單項目點擊
+    // 處理選單項目點擊，加入平滑捲動
     function handleMenuItemClick(e) {
+        e.preventDefault(); // 先阻止默認行為
         const menuItem = e.target.closest('.menu-item');
         if (!menuItem) return;
 
         const menuText = menuItem.querySelector('h1')?.textContent.trim();
         if (!menuText) return;
 
-        let targetUrl;
+        let targetId;
         switch (menuText) {
             case '關於我們':
-                targetUrl = '/netmet/#about';
+                targetId = 'about';
                 break;
             case '服務項目':
-                targetUrl = '/netmet/#server';
+                targetId = 'server';
                 break;
             case '專案實績':
-                targetUrl = '/netmet/#work';
+                targetId = 'work';
                 break;
             case '回到主頁':
-                closeAirContact(); // 先關閉選單
-                break;
+                closeAirContact();
+                return;
         }
 
-        if (targetUrl) {
+        if (targetId) {
+            e.preventDefault(); // 防止預設行為
             closeAirContact();
-            window.location.href = targetUrl;
+            
+            // 檢查是否在同一頁面
+            if (window.location.pathname === '/netmet/') {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            } else {
+                // 如果不在同一頁面，先導航再捲動
+                window.location.href = `/netmet/#${targetId}`;
+                // 當新頁面載入後自動捲動到目標位置
+                window.location.href = `/netmet/#${targetId}`;
+            }
         }
     }
 
@@ -107,6 +135,22 @@ function initializeMenu() {
     menuToggles.forEach(toggle => {
         toggle.addEventListener('click', openAirContact);
     });
+
+    function openAirContact(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        airContact.classList.add('active');
+        
+    }
+    
+    function closeAirContact(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        airContact.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 
     // 手機版選單
     if (mobileToggle) {
@@ -160,6 +204,23 @@ function initializeMenu() {
             }
         }, 10);
     });
+
+    // 處理頁面載入時的錨點捲動
+    window.addEventListener('load', function() {
+        const hash = window.location.hash;
+        if (hash) {
+            const targetId = hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            }
+        }
+    });
 }
 
 // 平滑滾動
@@ -202,7 +263,15 @@ function handleAnchorScroll() {
         }
     }
 }
-
+ // 禁用所有圖片的拖動功能
+ document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+      img.addEventListener("dragstart", event => {
+        event.preventDefault(); // 禁止拖動
+      });
+    });
+  });
 // DOM 載入完成後初始化
 document.addEventListener('DOMContentLoaded', function() {
     initializeMenu();

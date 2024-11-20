@@ -67,7 +67,9 @@
       }
   }
 }
-
+.nav-link{
+    cursor: pointer !important;
+}
 
 // Air Contact 專用樣式，完全獨立
 .air-contact {
@@ -120,7 +122,7 @@
         .menu-item {
             opacity: 1;
             transform: translateY(0);
-            cursor: pointer;
+            cursor: pointer !important;
         }
         .menu-item-contact{
             cursor: default;
