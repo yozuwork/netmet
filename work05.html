@@ -10,15 +10,15 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
 
-    <script type="module" crossorigin src="/netmet/assets/main-b0cbd816.js"></script>
-    <link rel="stylesheet" href="/netmet/assets/main-e05b83f7.css">
+    <script type="module" crossorigin src="/netmet/assets/main-00b29463.js"></script>
+    <link rel="stylesheet" href="/netmet/assets/main-fe36c794.css">
   </head>
   <body>
     <div id="loading">
     <img src="/netmet/assets/logo-bf6ef44e.svg" alt="Loading...">
 </div>
-<nav class="navbar navbar-expand-sm navbar-gradient-bottom">
-  <div class="container">
+<nav class="navbar navbar-expand-sm navbar-gradient-bottom opan-navbar"  >
+  <div class="container position-relative">
       <!-- Logo -->
       <a class="navbar-brand" href="/netmet/">
           <img class="logo" src="/netmet/assets/logo-bf6ef44e.svg" alt="Logo">
@@ -32,7 +32,7 @@
       </button>
 
       <!-- Navigation items -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end"  id="navbarNav">
           <ul class="navbar-nav">
               <li class="nav-item">
                   <a class="nav-link" href="/netmet/#about">關於我們</a>
@@ -50,116 +50,120 @@
                       </svg>
                   </a>
               </li>
+              
           </ul>
       </div>
   </div>
 </nav>
 
 <div class="air-contact" id="airContact">
-  <img class="contact-ripple d-none d-sm-block" src="/netmet/assets/contact-ripple-38c5eeef.svg" alt="">
-  <img class="contact-ripple-sm d-block d-sm-none" src="/netmet/assets/contact-ripple-sm-99f03726.svg" alt="">
-  
-  <!-- Desktop close button -->
-  <div class="container d-none d-sm-block">
-      <button class="close-button" aria-label="Close menu" type="button">
+    <img class="contact-ripple d-none d-sm-block" src="/netmet/assets/contact-ripple-38c5eeef.svg" alt="">
+    <img class="contact-ripple-sm d-block d-sm-none" src="/netmet/assets/contact-ripple-sm-99f03726.svg" alt="">
+    
+    <div class="container mb-5">
+        <!-- Desktop close button -->
+        <button class="close-button d-none d-sm-block" aria-label="Close menu" type="button">
           <span class="nyxerin-font me-2">CLOSE</span>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.34375 22.6563L22.6563 2.34375M2.34375 2.34375L22.6562 22.6563" stroke="white" stroke-width="2.11" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-      </button>
-  </div>
-
-  <div class="air-contact-container mt-0 mt-sm-20 py-3">
-      <div class="container">
-          <!-- Mobile close button -->
-          <div class="row d-flex d-sm-none mb-10 position-relative" >
-              <div class="col-12 d-flex justify-content-end">
-                  <button class="close-button" aria-label="Close menu">
-                      <span class="nyxerin-font me-2">CLOSE</span>
-                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.34375 22.6563L22.6563 2.34375M2.34375 2.34375L22.6562 22.6563" stroke="white" stroke-width="2.11" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                  </button>
-              </div>
-          </div>
-
-          <div class="row">
-              <!-- Menu items -->
-              <div class="col-sm-5">
-                  <div class="menu-item">
-                      <h1 class="fw-bolder">關於我們 <img class="d-inline" src="/netmet/assets/cat-paw-light-9f14a505.svg" alt=""></h1>
-                      <span class="nyxerin-font fs-5 fw-normal">ABOUT</span>
-                  </div>
-                  <div class="menu-item">
-                      <h1 class="fw-bolder">專案實績</h1>
-                      <span class="nyxerin-font fs-5">WORK</span>
-                  </div>
-                  <div class="menu-item">
-                      <h1 class="fw-bolder">服務項目</h1>
-                      <span class="nyxerin-font fs-5">SERVICES</span>
-                  </div>
-                  <div class="menu-item">
-                      <h1 class="fw-bolder">回到主頁</h1>
-                      <span class="nyxerin-font fs-5">BACK</span>
-                  </div>
-              </div>
-
-              <!-- Contact form -->
-              <div class="col-sm-7">
-                  <div class="menu-item menu-item-contact">
-                      <h1 class="fw-bolder">聯絡我們</h1>
-                      <span class="nyxerin-font fs-5">CONTACT</span>
-                  </div>
-                  <form class="navbar-form">
-                      <div class="row">
-                          <div class="col-12 col-sm-6">
-                              <div class="form-control-wrapper">
-                                  <input type="text" class="form-control" placeholder="您的名稱*" required>
-                              </div>
-                          </div>
-                          <div class="col-12 col-sm-6">
-                              <div class="form-control-wrapper">
-                                  <input type="tel" class="form-control" placeholder="聯絡電話*" required>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12 col-sm-6">
-                              <div class="form-control-wrapper">
-                                  <input type="email" class="form-control" placeholder="電子郵件*" required>
-                              </div>
-                          </div>
-                          <div class="col-12 col-sm-6">
-                              <div class="form-control-wrapper">
-                                  <input type="text" class="form-control" placeholder="公司名稱*" required>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12">
-                              <div class="form-control-wrapper">
-                                  <input type="text" class="form-control" placeholder="信件主旨*" required>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12">
-                              <div class="form-control-wrapper">
-                                  <textarea class="form-control" rows="4" placeholder="信件內文*" required></textarea>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="text-center text-sm-end mb-5">
-                          <button type="submit" class="btn send-btn btn-light mt-3 py-3 w-100">
-                              送出
-                          </button>
-                      </div>
-                  </form>
-              </div>
+        </button>
+        <div class="row d-flex d-sm-none mb-10 position-relative" >
+          <div class="col-12 d-flex justify-content-end">
+              <button class="close-button" aria-label="Close menu">
+                  <span class="nyxerin-font me-2">CLOSE</span>
+                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.34375 22.6563L22.6563 2.34375M2.34375 2.34375L22.6562 22.6563" stroke="white" stroke-width="2.11" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </button>
           </div>
       </div>
-  </div>
-</div>  
+      
+        <div class="air-contact-container mt-0 mt-sm-20 py-3">
+              <!-- Mobile close button -->
+             <div class="container-fluid">
+                  
+             </div>
+      
+             <div class="container">
+                  <div class="row">
+                      <!-- Menu items -->
+                      <div class="col-sm-5">
+                          <div class="menu-item">
+                              <h1 class="fw-bolder">關於我們 <img class="d-inline" src="/netmet/assets/cat-paw-light-9f14a505.svg" alt=""></h1>
+                              <span class="nyxerin-font fs-5 fw-normal">ABOUT</span>
+                          </div>
+                          <div class="menu-item">
+                              <h1 class="fw-bolder">專案實績</h1>
+                              <span class="nyxerin-font fs-5">WORK</span>
+                          </div>
+                          <div class="menu-item">
+                              <h1 class="fw-bolder">服務項目</h1>
+                              <span class="nyxerin-font fs-5">SERVICES</span>
+                          </div>
+                          <div class="menu-item">
+                              <h1 class="fw-bolder">回到主頁</h1>
+                              <span class="nyxerin-font fs-5">BACK</span>
+                          </div>
+                      </div>
+          
+                      <!-- Contact form -->
+                      <div class="col-sm-7">
+                          <div class="menu-item menu-item-contact">
+                              <h1 class="fw-bolder">聯絡我們</h1>
+                              <span class="nyxerin-font fs-5">CONTACT</span>
+                          </div>
+                          <form class="navbar-form">
+                              <div class="row">
+                                  <div class="col-12 col-sm-6">
+                                      <div class="form-control-wrapper">
+                                          <input type="text" class="form-control" placeholder="您的名稱*" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-sm-6">
+                                      <div class="form-control-wrapper">
+                                          <input type="tel" class="form-control" placeholder="聯絡電話*" required>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12 col-sm-6">
+                                      <div class="form-control-wrapper">
+                                          <input type="email" class="form-control" placeholder="電子郵件*" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-sm-6">
+                                      <div class="form-control-wrapper">
+                                          <input type="text" class="form-control" placeholder="公司名稱*" required>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="form-control-wrapper">
+                                          <input type="text" class="form-control" placeholder="信件主旨*" required>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="form-control-wrapper">
+                                          <textarea class="form-control" rows="4" placeholder="信件內文*" required></textarea>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="text-center text-sm-end mb-5">
+                                  <button type="submit" class="btn send-btn btn-light mt-3 py-3 w-100">
+                                      送出
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+             </div>
+        </div>
+    </div>
+  </div>  
     <div id="cross"></div>
     <section class="work-page">
         <img  class="work-bg-top" src="/netmet/assets/header-bg-top-d8fd4172.png" alt="Top background" >   
