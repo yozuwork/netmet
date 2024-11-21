@@ -71,6 +71,7 @@ function initializeMenu() {
     const menuToggles = document.querySelectorAll('.menuToggle');
     const mobileToggle = document.querySelector('.navbar-toggler');
     const airContact = document.getElementById('airContact');
+    const airContact02 = document.getElementById('airContact02');
     const closeButtons = document.querySelectorAll('.close-button');
     const navbar = document.querySelector('.navbar');
     
@@ -140,6 +141,7 @@ function initializeMenu() {
         e.preventDefault();
         e.stopPropagation();
         airContact.classList.add('active');
+        airContact02.classList.add('active');
         
     }
     
@@ -149,6 +151,7 @@ function initializeMenu() {
             e.stopPropagation();
         }
         airContact.classList.remove('active');
+        airContact02.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 
@@ -164,6 +167,9 @@ function initializeMenu() {
         if (e.target === airContact) {
             closeAirContact(e);
         }
+        if (e.target === airContact02) {
+            closeAirContact(e);
+        }
     });
 
     // ESC 關閉
@@ -171,14 +177,21 @@ function initializeMenu() {
         if (e.key === 'Escape' && airContact.classList.contains('active')) {
             closeAirContact();
         }
+        if (e.key === 'Escape' && airContact02.classList.contains('active')) {
+            closeAirContact();
+        }
     });
 
     // 選單項目點擊
     airContact.addEventListener('click', handleMenuItemClick);
+    airContact02.addEventListener('click', handleMenuItemClick);
 
     // 觸控支援
     let touchStartY = 0;
     airContact.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    airContact02.addEventListener('touchstart', function(e) {
         touchStartY = e.touches[0].clientY;
     }, { passive: true });
 
@@ -187,6 +200,14 @@ function initializeMenu() {
         const yDiff = touchEndY - touchStartY;
         
         if (yDiff > 50 && e.target === airContact) {
+            closeAirContact();
+        }
+    });
+    airContact02.addEventListener('touchend', function(e) {
+        const touchEndY = e.changedTouches[0].clientY;
+        const yDiff = touchEndY - touchStartY;
+        
+        if (yDiff > 50 && e.target === airContact02) {
             closeAirContact();
         }
     });
